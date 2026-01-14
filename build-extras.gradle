@@ -3,10 +3,20 @@
 // * can be used to customise `build.gradle`
 // * is generated once and not overwritten in SDK generation updates
 
-// Apply Sonar plugin
-plugins {
-    id 'org.sonarqube' version '4.4.1.3373'
+// Add SonarQube plugin classpath
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.4.1.3373"
+    }
 }
+
+// Apply Sonar plugin
+apply plugin: 'org.sonarqube'
 
 // Configure SonarQube
 sonarqube {
