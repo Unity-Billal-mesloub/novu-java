@@ -30,7 +30,8 @@ generation:
 java:
   version: 0.0.3
   additionalDependencies: []
-  additionalPlugins: []
+  additionalPlugins:
+    - id 'org.sonarqube' version '4.4.1.3373'
   artifactID: novu-java
   asyncMode: enabled
   baseErrorName: NovuException
