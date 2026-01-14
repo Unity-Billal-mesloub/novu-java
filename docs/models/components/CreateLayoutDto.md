@@ -1,0 +1,11 @@
+# CreateLayoutDto
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `layoutId`                                                                                 | *String*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier for the layout                                                           |
+| `name`                                                                                     | *String*                                                                                   | :heavy_check_mark:                                                                         | Name of the layout                                                                         |
+| `isTranslationEnabled`                                                                     | *Optional\<Boolean>*                                                                       | :heavy_minus_sign:                                                                         | Enable or disable translations for this layout                                             |
+| `source`                                                                                   | [Optional\<LayoutCreationSourceEnum>](../../models/components/LayoutCreationSourceEnum.md) | :heavy_minus_sign:                                                                         | Source of layout creation                                                                  |

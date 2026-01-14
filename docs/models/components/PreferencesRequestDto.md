@@ -1,0 +1,9 @@
+# PreferencesRequestDto
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `user`                                                                                                   | [JsonNullable\<User>](../../models/components/User.md)                                                   | :heavy_minus_sign:                                                                                       | User workflow preferences                                                                                |
+| `workflow`                                                                                               | [JsonNullable\<PreferencesRequestDtoWorkflow>](../../models/components/PreferencesRequestDtoWorkflow.md) | :heavy_minus_sign:                                                                                       | Workflow-specific preferences                                                                            |

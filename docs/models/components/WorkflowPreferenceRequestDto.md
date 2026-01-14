@@ -1,0 +1,10 @@
+# WorkflowPreferenceRequestDto
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `enabled`                                                               | *Optional\<Boolean>*                                                    | :heavy_minus_sign:                                                      | Whether the preference is enabled. Used when condition is not provided. | true                                                                    |
+| `condition`                                                             | Map\<String, *Object*>                                                  | :heavy_minus_sign:                                                      | Optional condition using JSON Logic rules                               | {<br/>"and": [<br/>{<br/>"===": [<br/>{<br/>"var": "tier"<br/>},<br/>"premium"<br/>]<br/>}<br/>]<br/>} |
+| `workflowId`                                                            | *String*                                                                | :heavy_check_mark:                                                      | The workflow identifier                                                 | workflow-123                                                            |

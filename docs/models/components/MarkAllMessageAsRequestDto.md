@@ -1,0 +1,9 @@
+# MarkAllMessageAsRequestDto
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `feedIdentifier`                                                                                | [Optional\<FeedIdentifier>](../../models/components/FeedIdentifier.md)                          | :heavy_minus_sign:                                                                              | Optional feed identifier or array of feed identifiers                                           |
+| `markAs`                                                                                        | [MarkAllMessageAsRequestDtoMarkAs](../../models/components/MarkAllMessageAsRequestDtoMarkAs.md) | :heavy_check_mark:                                                                              | Mark all subscriber messages as read, unread, seen or unseen                                    |

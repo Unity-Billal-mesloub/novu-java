@@ -1,0 +1,12 @@
+# TopicSubscriptionResponseDto
+
+
+## Fields
+
+| Field                                                           | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `id`                                                            | *String*                                                        | :heavy_check_mark:                                              | The identifier of the subscription                              | 64da692e9a94fb2e6449ad08                                        |
+| `identifier`                                                    | *String*                                                        | :heavy_check_mark:                                              | The identifier of the subscription                              | tk=product-updates:si=subscriber-123                            |
+| `createdAt`                                                     | *String*                                                        | :heavy_check_mark:                                              | The date and time the subscription was created                  | 2021-01-01T00:00:00.000Z                                        |
+| `topic`                                                         | [TopicResponseDto](../../models/components/TopicResponseDto.md) | :heavy_check_mark:                                              | Topic information                                               |                                                                 |
+| `subscriber`                                                    | [SubscriberDto](../../models/components/SubscriberDto.md)       | :heavy_check_mark:                                              | Subscriber information                                          |                                                                 |

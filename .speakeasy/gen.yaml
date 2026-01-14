@@ -1,0 +1,75 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Novu
+  maintainOpenAPIOrder: true
+  usageSnippets:
+    optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
+  useClassNamesForArrayFields: true
+  fixes:
+    nameResolutionDec2023: true
+    nameResolutionFeb2025: true
+    parameterOrderingFeb2024: true
+    requestResponseComponentNamesFeb2024: true
+    securityFeb2025: true
+    sharedErrorComponentsApr2025: true
+  auth:
+    oAuth2ClientCredentialsEnabled: true
+    oAuth2PasswordEnabled: true
+    hoistGlobalSecurity: true
+  inferSSEOverload: true
+  sdkHooksConfigAccess: true
+  schemas:
+    allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: body
+  persistentEdits: {}
+  tests:
+    generateTests: false
+    generateNewTests: true
+    skipResponseBodyAssertions: false
+java:
+  version: 0.0.3
+  additionalDependencies: []
+  additionalPlugins: []
+  artifactID: novu-java
+  asyncMode: enabled
+  baseErrorName: NovuException
+  clientServerStatusCodesAsErrors: true
+  companyEmail: info@mycompany.com
+  companyName: My Company
+  companyURL: www.mycompany.com
+  defaultErrorName: APIException
+  enableCustomCodeRegions: false
+  enableSlf4jLogging: true
+  enableStreamingUploads: true
+  flattenGlobalSecurity: true
+  forwardCompatibleEnumsByDefault: true
+  generateOptionalUnionAccessors: true
+  generateSpringBootStarter: true
+  githubURL: github.com/owner/repo
+  groupID: co.novu
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/components
+      webhooks: models/webhooks
+  inferUnionDiscriminators: true
+  inputModelSuffix: input
+  languageVersion: 11
+  license:
+    name: The MIT License (MIT)
+    shortName: MIT
+    url: https://mit-license.org/
+  maxMethodParams: 4
+  multipartArrayFormat: standard
+  nullFriendlyParameters: true
+  openUnions: true
+  operationScopedParams: true
+  outputModelSuffix: output
+  packageName: org.openapis.openapi
+  projectName: openapi
+  templateVersion: v2
+  unionStrategy: populated-fields

@@ -1,0 +1,38 @@
+speakeasyVersion: 1.685.0
+sources:
+    Novu-OAS:
+        sourceNamespace: novu-oas
+        sourceRevisionDigest: sha256:fdf9e744011dbc6cdac3a1b54b014363e4bf71780c68b0e57d34e50a7f93678e
+        sourceBlobDigest: sha256:dd8cfd81eae54fc9bcf66dab1dad7d70c6b51e856cced6277c551b61e76bb91d
+        tags:
+            - latest
+targets:
+    novu:
+        source: Novu-OAS
+        sourceNamespace: novu-oas
+        sourceRevisionDigest: sha256:fdf9e744011dbc6cdac3a1b54b014363e4bf71780c68b0e57d34e50a7f93678e
+        sourceBlobDigest: sha256:dd8cfd81eae54fc9bcf66dab1dad7d70c6b51e856cced6277c551b61e76bb91d
+        codeSamplesNamespace: novu-oas-java-code-samples
+        codeSamplesRevisionDigest: sha256:1c9d3693d14ee2801d4ec2d11df604cfe657aa6416c0d7becfcd9aae6d1b9880
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Novu-OAS:
+            inputs:
+                - location: registry.speakeasyapi.dev/novu/novu/novu-oas:main
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/novu/novu/novu-oas
+    targets:
+        novu:
+            target: java
+            source: Novu-OAS
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/novu/novu/novu-oas-java-code-samples
+                labelOverride:
+                    fixedValue: Java (SDK)
+                blocking: false

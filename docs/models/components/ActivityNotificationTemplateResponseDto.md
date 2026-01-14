@@ -1,0 +1,11 @@
+# ActivityNotificationTemplateResponseDto
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `id`                                                                               | *Optional\<String>*                                                                | :heavy_minus_sign:                                                                 | Unique identifier of the template                                                  |
+| `name`                                                                             | *String*                                                                           | :heavy_check_mark:                                                                 | Name of the template                                                               |
+| `origin`                                                                           | [Optional\<ResourceOriginEnum>](../../models/components/ResourceOriginEnum.md)     | :heavy_minus_sign:                                                                 | Origin of the layout                                                               |
+| `triggers`                                                                         | List\<[NotificationTriggerDto](../../models/components/NotificationTriggerDto.md)> | :heavy_check_mark:                                                                 | Triggers of the template                                                           |

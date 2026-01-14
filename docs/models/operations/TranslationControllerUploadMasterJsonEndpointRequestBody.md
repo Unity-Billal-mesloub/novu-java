@@ -1,0 +1,8 @@
+# TranslationControllerUploadMasterJsonEndpointRequestBody
+
+
+## Fields
+
+| Field                                                                                                                             | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `file`                                                                                                                            | [TranslationControllerUploadMasterJsonEndpointFile](../../models/operations/TranslationControllerUploadMasterJsonEndpointFile.md) | :heavy_check_mark:                                                                                                                | Master JSON file with locale as filename (e.g., en_US.json)                                                                       |

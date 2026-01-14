@@ -1,0 +1,11 @@
+# NotificationTriggerDto
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `type`                                                                                       | [NotificationTriggerDtoType](../../models/components/NotificationTriggerDtoType.md)          | :heavy_check_mark:                                                                           | Type of the trigger                                                                          |
+| `identifier`                                                                                 | *String*                                                                                     | :heavy_check_mark:                                                                           | Identifier of the trigger                                                                    |
+| `variables`                                                                                  | List\<[NotificationTriggerVariable](../../models/components/NotificationTriggerVariable.md)> | :heavy_check_mark:                                                                           | Variables of the trigger                                                                     |
+| `subscriberVariables`                                                                        | List\<[NotificationTriggerVariable](../../models/components/NotificationTriggerVariable.md)> | :heavy_minus_sign:                                                                           | Subscriber variables of the trigger                                                          |

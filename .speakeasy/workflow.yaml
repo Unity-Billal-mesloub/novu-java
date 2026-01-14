@@ -1,0 +1,21 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Novu-OAS:
+        inputs:
+            - location: registry.speakeasyapi.dev/novu/novu/novu-oas:main
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/novu/novu/novu-oas
+targets:
+    novu:
+        target: java
+        source: Novu-OAS
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/novu/novu/novu-oas-java-code-samples
+            labelOverride:
+                fixedValue: Java (SDK)
+            blocking: false

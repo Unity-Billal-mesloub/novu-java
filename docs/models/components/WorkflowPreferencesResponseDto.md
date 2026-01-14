@@ -1,0 +1,9 @@
+# WorkflowPreferencesResponseDto
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `user`                                                                                                             | [JsonNullable\<WorkflowPreferencesResponseDtoUser>](../../models/components/WorkflowPreferencesResponseDtoUser.md) | :heavy_minus_sign:                                                                                                 | User-specific workflow preferences                                                                                 |
+| `default_`                                                                                                         | [WorkflowPreferencesDto](../../models/components/WorkflowPreferencesDto.md)                                        | :heavy_check_mark:                                                                                                 | Default workflow preferences                                                                                       |

@@ -1,0 +1,10 @@
+# StepContentIssueDto
+
+
+## Fields
+
+| Field                                                           | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `issueType`                                                     | [ContentIssueEnum](../../models/components/ContentIssueEnum.md) | :heavy_check_mark:                                              | Type of step content issue                                      |
+| `variableName`                                                  | *Optional\<String>*                                             | :heavy_minus_sign:                                              | Name of the variable related to the issue                       |
+| `message`                                                       | *String*                                                        | :heavy_check_mark:                                              | Detailed message describing the issue                           |

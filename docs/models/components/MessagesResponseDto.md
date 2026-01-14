@@ -1,0 +1,12 @@
+# MessagesResponseDto
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `totalCount`                                                               | *Optional\<Double>*                                                        | :heavy_minus_sign:                                                         | Total number of messages available                                         |
+| `hasMore`                                                                  | *boolean*                                                                  | :heavy_check_mark:                                                         | Indicates if there are more messages available                             |
+| `data`                                                                     | List\<[MessageResponseDto](../../models/components/MessageResponseDto.md)> | :heavy_check_mark:                                                         | List of messages                                                           |
+| `pageSize`                                                                 | *double*                                                                   | :heavy_check_mark:                                                         | Number of messages per page                                                |
+| `page`                                                                     | *double*                                                                   | :heavy_check_mark:                                                         | Current page number                                                        |

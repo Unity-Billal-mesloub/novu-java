@@ -1,0 +1,10 @@
+# StepIntegrationIssue
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `issueType`                                                             | [IntegrationIssueEnum](../../models/components/IntegrationIssueEnum.md) | :heavy_check_mark:                                                      | Type of integration issue                                               |
+| `variableName`                                                          | *Optional\<String>*                                                     | :heavy_minus_sign:                                                      | Name of the variable related to the issue                               |
+| `message`                                                               | *String*                                                                | :heavy_check_mark:                                                      | Detailed message describing the issue                                   |
