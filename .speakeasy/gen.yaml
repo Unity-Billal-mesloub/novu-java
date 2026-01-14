@@ -35,9 +35,9 @@ java:
   asyncMode: enabled
   baseErrorName: NovuException
   clientServerStatusCodesAsErrors: true
-  companyEmail: info@mycompany.com
-  companyName: My Company
-  companyURL: www.mycompany.com
+  companyEmail: engineering@novu.co
+  companyName: Novu
+  companyURL: https://novu.co
   defaultErrorName: APIException
   enableCustomCodeRegions: false
   enableSlf4jLogging: true
@@ -46,7 +46,7 @@ java:
   forwardCompatibleEnumsByDefault: true
   generateOptionalUnionAccessors: true
   generateSpringBootStarter: true
-  githubURL: github.com/owner/repo
+  githubURL: github.com/novu/novu-java
   groupID: co.novu
   imports:
     option: openapi
