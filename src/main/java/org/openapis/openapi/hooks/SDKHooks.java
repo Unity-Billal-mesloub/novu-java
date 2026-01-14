@@ -14,19 +14,19 @@ public final class SDKHooks {
 
     public static void initialize(org.openapis.openapi.utils.Hooks hooks) {
         // register synchronous hooks here
-        // hooks.registerBeforeRequest(...);
-        // hooks.registerAfterSuccess(...);
-        // hooks.registerAfterError(...);
-
+        NovuHooks novuHooks = new NovuHooks();
+        hooks.registerBeforeRequest(novuHooks);
+        hooks.registerAfterSuccess(novuHooks);
+        
         // for more information see
         // https://www.speakeasy.com/docs/additional-features/sdk-hooks
     }
 
     public static void initialize(org.openapis.openapi.utils.AsyncHooks asyncHooks) {
         // register async hooks here
-        // asyncHooks.registerBeforeRequest(...);
-        // asyncHooks.registerAfterSuccess(...);
-        // asyncHooks.registerAfterError(...);
+        NovuAsyncHooks novuAsyncHooks = new NovuAsyncHooks();
+        asyncHooks.registerBeforeRequest(novuAsyncHooks);
+        asyncHooks.registerAfterSuccess(novuAsyncHooks);
         
         // NOTE: If you have existing synchronous hooks, you can adapt them using HookAdapters:
         // asyncHooks.registerAfterError(org.openapis.openapi.utils.HookAdapters.adapt(mySyncHook));

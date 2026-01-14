@@ -174,7 +174,6 @@ public class SubscriberResponseDtoException extends NovuException {
      * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @Deprecated
-    @Deprecated
     public Optional<List<String>> topics() {
         return data().flatMap(Data::topics);
     }
