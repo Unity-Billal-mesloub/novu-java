@@ -1,0 +1,10 @@
+# SubscriberChannelDto
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `providerId`                                                                                | [SubscriberChannelDtoProviderId](../../models/components/SubscriberChannelDtoProviderId.md) | :heavy_check_mark:                                                                          | The ID of the chat or push provider.                                                        |
+| `integrationIdentifier`                                                                     | *Optional\<String>*                                                                         | :heavy_minus_sign:                                                                          | An optional identifier for the integration.                                                 |
+| `credentials`                                                                               | [ChannelCredentialsDto](../../models/components/ChannelCredentialsDto.md)                   | :heavy_check_mark:                                                                          | Credentials for the channel.                                                                |

@@ -1,0 +1,509 @@
+# Layouts
+
+## Overview
+
+Layouts are reusable wrappers for your email notifications.
+<https://docs.novu.co/platform/workflow/layouts>
+
+### Available Operations
+
+* [create](#create) - Create a layout
+* [list](#list) - List all layouts
+* [update](#update) - Update a layout
+* [retrieve](#retrieve) - Retrieve a layout
+* [delete](#delete) - Delete a layout
+* [duplicate](#duplicate) - Duplicate a layout
+* [preview](#preview) - Generate layout preview
+* [getUsage](#getusage) - Get layout usage
+
+## create
+
+Creates a new layout in the Novu Cloud environment
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_create" method="post" path="/v2/layouts" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.components.CreateLayoutDto;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerCreateResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerCreateResponse res = sdk.layouts().create()
+                .body(CreateLayoutDto.builder()
+                    .layoutId("<id>")
+                    .name("<value>")
+                    .build())
+                .call();
+
+        if (res.layoutResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `idempotencyKey`                                              | *Optional\<String>*                                           | :heavy_minus_sign:                                            | A header for idempotency purposes                             |
+| `body`                                                        | [CreateLayoutDto](../../models/components/CreateLayoutDto.md) | :heavy_check_mark:                                            | Layout creation details                                       |
+
+### Response
+
+**[LayoutsControllerCreateResponse](../../models/operations/LayoutsControllerCreateResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## list
+
+Retrieves a list of layouts with optional filtering and pagination
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_list" method="get" path="/v2/layouts" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerListRequest;
+import org.openapis.openapi.models.operations.LayoutsControllerListResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerListRequest req = LayoutsControllerListRequest.builder()
+                .limit(10d)
+                .offset(0d)
+                .build();
+
+        LayoutsControllerListResponse res = sdk.layouts().list()
+                .request(req)
+                .call();
+
+        if (res.listLayoutResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [LayoutsControllerListRequest](../../models/operations/LayoutsControllerListRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[LayoutsControllerListResponse](../../models/operations/LayoutsControllerListResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## update
+
+Updates the details of an existing layout, here **layoutId** is the identifier of the layout
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_update" method="put" path="/v2/layouts/{layoutId}" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.components.UpdateLayoutDto;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerUpdateResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerUpdateResponse res = sdk.layouts().update()
+                .layoutId("<id>")
+                .body(UpdateLayoutDto.builder()
+                    .name("<value>")
+                    .build())
+                .call();
+
+        if (res.layoutResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `layoutId`                                                    | *String*                                                      | :heavy_check_mark:                                            | N/A                                                           |
+| `idempotencyKey`                                              | *Optional\<String>*                                           | :heavy_minus_sign:                                            | A header for idempotency purposes                             |
+| `body`                                                        | [UpdateLayoutDto](../../models/components/UpdateLayoutDto.md) | :heavy_check_mark:                                            | Layout update details                                         |
+
+### Response
+
+**[LayoutsControllerUpdateResponse](../../models/operations/LayoutsControllerUpdateResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## retrieve
+
+Fetches details of a specific layout by its unique identifier **layoutId**
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_get" method="get" path="/v2/layouts/{layoutId}" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerGetResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerGetResponse res = sdk.layouts().retrieve()
+                .layoutId("<id>")
+                .call();
+
+        if (res.layoutResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `layoutId`                        | *String*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *Optional\<String>*               | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[LayoutsControllerGetResponse](../../models/operations/LayoutsControllerGetResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## delete
+
+Removes a specific layout by its unique identifier **layoutId**
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController__delete" method="delete" path="/v2/layouts/{layoutId}" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerDeleteResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerDeleteResponse res = sdk.layouts().delete()
+                .layoutId("<id>")
+                .call();
+
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                           | Type                                | Required                            | Description                         |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| `layoutId`                          | *String*                            | :heavy_check_mark:                  | The unique identifier of the layout |
+| `idempotencyKey`                    | *Optional\<String>*                 | :heavy_minus_sign:                  | A header for idempotency purposes   |
+
+### Response
+
+**[LayoutsControllerDeleteResponse](../../models/operations/LayoutsControllerDeleteResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## duplicate
+
+Duplicates a layout by its unique identifier **layoutId**. This will create a new layout with the content of the original layout.
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_duplicate" method="post" path="/v2/layouts/{layoutId}/duplicate" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.components.DuplicateLayoutDto;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerDuplicateResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerDuplicateResponse res = sdk.layouts().duplicate()
+                .layoutId("<id>")
+                .body(DuplicateLayoutDto.builder()
+                    .name("<value>")
+                    .build())
+                .call();
+
+        if (res.layoutResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `layoutId`                                                          | *String*                                                            | :heavy_check_mark:                                                  | N/A                                                                 |
+| `idempotencyKey`                                                    | *Optional\<String>*                                                 | :heavy_minus_sign:                                                  | A header for idempotency purposes                                   |
+| `body`                                                              | [DuplicateLayoutDto](../../models/components/DuplicateLayoutDto.md) | :heavy_check_mark:                                                  | N/A                                                                 |
+
+### Response
+
+**[LayoutsControllerDuplicateResponse](../../models/operations/LayoutsControllerDuplicateResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## preview
+
+Generates a preview for a layout by its unique identifier **layoutId**
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_generatePreview" method="post" path="/v2/layouts/{layoutId}/preview" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import java.util.List;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.components.*;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerGeneratePreviewResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerGeneratePreviewResponse res = sdk.layouts().preview()
+                .layoutId("<id>")
+                .body(LayoutPreviewRequestDto.builder()
+                    .previewPayload(LayoutPreviewPayloadDto.builder()
+                        .subscriber(SubscriberResponseDtoOptional.builder()
+                            .channels(List.of(
+                                ChannelSettingsDto.builder()
+                                    .providerId(ChatOrPushProviderEnum.MATTERMOST)
+                                    .credentials(ChannelCredentials.builder()
+                                        .webhookUrl("https://example.com/webhook")
+                                        .channel("general")
+                                        .deviceTokens(List.of(
+                                            "token1",
+                                            "token2",
+                                            "token3"))
+                                        .alertUid("12345-abcde")
+                                        .title("Critical Alert")
+                                        .imageUrl("https://example.com/image.png")
+                                        .state("resolved")
+                                        .externalUrl("https://example.com/details")
+                                        .build())
+                                    .integrationId("<id>")
+                                    .build()))
+                            .build())
+                        .build())
+                    .build())
+                .call();
+
+        if (res.generateLayoutPreviewResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `layoutId`                                                                    | *String*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `idempotencyKey`                                                              | *Optional\<String>*                                                           | :heavy_minus_sign:                                                            | A header for idempotency purposes                                             |
+| `body`                                                                        | [LayoutPreviewRequestDto](../../models/components/LayoutPreviewRequestDto.md) | :heavy_check_mark:                                                            | Layout preview generation details                                             |
+
+### Response
+
+**[LayoutsControllerGeneratePreviewResponse](../../models/operations/LayoutsControllerGeneratePreviewResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |
+
+## getUsage
+
+Retrieves information about workflows that use the specified layout by its unique identifier **layoutId**
+
+### Example Usage
+
+<!-- UsageSnippet language="java" operationID="LayoutsController_getUsage" method="get" path="/v2/layouts/{layoutId}/usage" -->
+```java
+package hello.world;
+
+import java.lang.Exception;
+import org.openapis.openapi.Novu;
+import org.openapis.openapi.models.errors.ErrorDto;
+import org.openapis.openapi.models.errors.ValidationErrorDto;
+import org.openapis.openapi.models.operations.LayoutsControllerGetUsageResponse;
+
+public class Application {
+
+    public static void main(String[] args) throws ErrorDto, ValidationErrorDto, Exception {
+
+        Novu sdk = Novu.builder()
+                .secretKey("YOUR_SECRET_KEY_HERE")
+            .build();
+
+        LayoutsControllerGetUsageResponse res = sdk.layouts().getUsage()
+                .layoutId("<id>")
+                .call();
+
+        if (res.getLayoutUsageResponseDto().isPresent()) {
+            // handle response
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `layoutId`                        | *String*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *Optional\<String>*               | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[LayoutsControllerGetUsageResponse](../../models/operations/LayoutsControllerGetUsageResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| models/errors/ErrorDto                 | 414                                    | application/json                       |
+| models/errors/ErrorDto                 | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| models/errors/ValidationErrorDto       | 422                                    | application/json                       |
+| models/errors/ErrorDto                 | 500                                    | application/json                       |
+| models/errors/APIException             | 4XX, 5XX                               | \*/\*                                  |

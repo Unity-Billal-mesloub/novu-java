@@ -1,0 +1,13 @@
+# TimedConfig
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `atTime`                                                                   | *Optional\<String>*                                                        | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `weekDays`                                                                 | List\<[TimedConfigWeekDay](../../models/components/TimedConfigWeekDay.md)> | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `monthDays`                                                                | List\<*String*>                                                            | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `ordinal`                                                                  | [Optional\<Ordinal>](../../models/components/Ordinal.md)                   | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `ordinalValue`                                                             | [Optional\<OrdinalValue>](../../models/components/OrdinalValue.md)         | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `monthlyType`                                                              | [Optional\<MonthlyType>](../../models/components/MonthlyType.md)           | :heavy_minus_sign:                                                         | N/A                                                                        |

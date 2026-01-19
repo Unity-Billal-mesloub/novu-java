@@ -1,0 +1,10 @@
+# SubscribersControllerCreateSubscriberRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `failIfExists`                                                                           | *Optional\<Boolean>*                                                                     | :heavy_minus_sign:                                                                       | If true, the request will fail if a subscriber with the same subscriberId already exists |
+| `idempotencyKey`                                                                         | *Optional\<String>*                                                                      | :heavy_minus_sign:                                                                       | A header for idempotency purposes                                                        |
+| `body`                                                                                   | [CreateSubscriberRequestDto](../../models/components/CreateSubscriberRequestDto.md)      | :heavy_check_mark:                                                                       | N/A                                                                                      |

@@ -1,0 +1,10 @@
+# LayoutsControllerGeneratePreviewRequest
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `layoutId`                                                                    | *String*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `idempotencyKey`                                                              | *Optional\<String>*                                                           | :heavy_minus_sign:                                                            | A header for idempotency purposes                                             |
+| `body`                                                                        | [LayoutPreviewRequestDto](../../models/components/LayoutPreviewRequestDto.md) | :heavy_check_mark:                                                            | Layout preview generation details                                             |

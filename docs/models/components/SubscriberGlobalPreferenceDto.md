@@ -1,0 +1,10 @@
+# SubscriberGlobalPreferenceDto
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `enabled`                                                                               | *boolean*                                                                               | :heavy_check_mark:                                                                      | Whether notifications are enabled globally                                              |
+| `channels`                                                                              | [SubscriberPreferenceChannels](../../models/components/SubscriberPreferenceChannels.md) | :heavy_check_mark:                                                                      | Channel-specific preference settings                                                    |
+| `schedule`                                                                              | [Optional\<ScheduleDto>](../../models/components/ScheduleDto.md)                        | :heavy_minus_sign:                                                                      | Subscriber schedule                                                                     |

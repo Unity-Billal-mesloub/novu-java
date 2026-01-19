@@ -1,0 +1,12 @@
+# ListContextsResponseDto
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `data`                                                                           | List\<[GetContextResponseDto](../../models/components/GetContextResponseDto.md)> | :heavy_check_mark:                                                               | List of returned Contexts                                                        |
+| `next`                                                                           | *Optional\<String>*                                                              | :heavy_check_mark:                                                               | The cursor for the next page of results, or null if there are no more pages.     |
+| `previous`                                                                       | *Optional\<String>*                                                              | :heavy_check_mark:                                                               | The cursor for the previous page of results, or null if this is the first page.  |
+| `totalCount`                                                                     | *double*                                                                         | :heavy_check_mark:                                                               | The total count of items (up to 50,000)                                          |
+| `totalCountCapped`                                                               | *boolean*                                                                        | :heavy_check_mark:                                                               | Whether there are more than 50,000 results available                             |

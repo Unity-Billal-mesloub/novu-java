@@ -1,0 +1,10 @@
+# UpdateLayoutDto
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `name`                                                                                                 | *String*                                                                                               | :heavy_check_mark:                                                                                     | Name of the layout                                                                                     |
+| `isTranslationEnabled`                                                                                 | *Optional\<Boolean>*                                                                                   | :heavy_minus_sign:                                                                                     | Enable or disable translations for this layout                                                         |
+| `controlValues`                                                                                        | [JsonNullable\<UpdateLayoutDtoControlValues>](../../models/components/UpdateLayoutDtoControlValues.md) | :heavy_minus_sign:                                                                                     | Control values for the layout                                                                          |
